@@ -22,6 +22,7 @@ This is a simple web application that demonstrates speech-to-text and text-to-sp
 ## API Used
 
 - https://rapidapi.com/service-Um7IkyFJ9/api/gpt-based-google-search
+- 10 Answers per hour
 
 ## Setup and Configuration
 
