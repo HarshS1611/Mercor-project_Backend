@@ -30,22 +30,22 @@ app.post("/processTranscript", async (req, res) => {
   try {
     // Call OpenAI ChatGPT API
     const option = {
-      method: "POST",
-      url: "https://chatgpt-gpt4-ai-chatbot.p.rapidapi.com/ask",
+      method: 'POST',
+      url: 'https://gpt-based-google-search.p.rapidapi.com/search',
       headers: {
-        "content-type": "application/json",
-        "X-RapidAPI-Key": "c2c16bd498mshbe8d539aec12942p166ddcjsn5b0358c7847f",
-        "X-RapidAPI-Host": "chatgpt-gpt4-ai-chatbot.p.rapidapi.com",
+        'content-type': 'application/json',
+        'X-RapidAPI-Key': 'c2c16bd498mshbe8d539aec12942p166ddcjsn5b0358c7847f',
+        'X-RapidAPI-Host': 'gpt-based-google-search.p.rapidapi.com'
       },
       data: {
-        query: prompt,
-      },
+        question: prompt
+      }
     };
 
     try {
       const response = await axios.request(option);
       console.log(response.data);
-      const reply = response.data.response;
+      const reply = response.data.data.slice(0, 200);
       console.log("AI reply:", reply);
 
       // Convert the AI reply to speech
